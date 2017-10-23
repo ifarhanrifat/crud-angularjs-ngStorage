@@ -1,0 +1,87 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+body, html{ height: 100%; padding: 0;}
+
+
+body{font-family: 'Lato', sans-serif; overflow-x: hidden;}
+
+/*** CONTENT ***/
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'Lato', sans-serif;}
+
+table.table-responsive {
+    width: 100%;
+}
+ul li{
+    display: inline-block;
+}
+ul{
+    margin:0;
+    padding:0;
+}
+th, td{
+    text-align: center;
+    padding:6px 10px;
+}
+.table .table-bordered>thead>tr>th, .table .table-bordered>thead>tr>td {
+    border-bottom-width: 1px;
+    /* border-bottom: none; */
+}
+tr td:first-child{
+    font-weight:600;
+}
+thead tr{
+    background-color:#f7f7f7;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+    border-radius: 5px;
+    border: none;
+    line-height: 40px;
+    font-size: 17px;
+    padding: 0 20px;
+    font-weight: 500;
+}
+.btn-default[disabled]{
+    background-color: #aaa;
+    border-color: #aaa;
+    border-radius: 5px;
+    border: none;
+    line-height: 22px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.btn-default{
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+.btn-success{
+    background-color: #449d44;
+    border-color: #398439;
+    border-radius: 5px;
+    border: none;
+    line-height: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    padding:0 10px;
+}
+.btn-danger{
+    background-color: #c9302c;
+    border-color: #ac2925;
+    border-radius: 5px;
+    border: none;
+    line-height: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    padding:0 10px;
+}
+.hed button{
+    margin:20px 0;
+}

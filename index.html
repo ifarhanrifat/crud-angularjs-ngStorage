@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--iPhone from zooming form issue (maximum-scale=1, user-scalable=0)-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/jquery-2.2.4.min.js"></script>	
+        <script src="js/angular.min.js"></script>		
+        <script src="app.js"></script>
+        <script src="controller.js"></script>
+</head>
+	
+<body ng-app="moduleApp">
+        <div ng-controller="myCtrl as vm">
+                <div class="container">
+                        <div class="hed text-center col-sm-12">
+                                <h2>Student Management System</h2>
+                                <button class="btn-primary" ng-click="vm.togInputRow()">Add Student</button>
+                        </div>
+                        <div class="inputs-box col-sm-12" ng-form="myMainForm">
+                                <div class="forms-inputs row" ng-show="vm.showInputs">
+                                        <div class="form-group col-sm-2">
+                                                <input type="text" ng-model="vm.data.fname" class="form-control" id="fname" placeholder="First Name" required >
+                                        </div>
+                                        <div class="form-group col-sm-2">
+                                                <input type="text" ng-model="vm.data.lname" class="form-control" id="lname" placeholder="Last Name" required>
+                                        </div>
+                                        <div class="form-group col-sm-2">
+                                                <input type="text" ng-model="vm.data.classs" class="form-control" id="classs" placeholder="Class" required>
+                                        </div>
+                                        <div class="form-group col-sm-2">
+                                                <input type="text" ng-model="vm.data.age" class="form-control" id="age" placeholder="Age" required>
+                                        </div>
+                                        <div class="form-group col-sm-2">
+                                                <input type="text" ng-model="vm.data.fees" class="form-control" id="fees" placeholder="fees" required>
+                                        </div>
+                                        <div class="form-group col-sm-1">
+                                                <button type="submit" class="btn btn-default submit-btn" ng-hide="vm.submitBtn" ng-click="vm.submit(); vm.clearAll()" ng-disabled="myMainForm.$invalid">Submit</button>
+                                                <button type="submit" ng-show="vm.saveBtn" class="btn btn-default cancel-submit-btn" ng-click="vm.savedata(list.id); vm.clearAll()" ng-disabled="myMainForm.$invalid">Save</button>
+                                        </div>
+                                        <div class="form-group col-sm-1">
+                                               <button class="btn btn-default" ng-click="vm.togInputRow()">Close</button>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="table text-center col-sm-12">
+                                <table class="table-responsive table-bordered">
+                                        <thead>
+                                                <tr>
+                                                        <th>#</th>
+                                                        <th>First Name</th>
+                                                        <th>Last Name</th>
+                                                        <th>Class</th>
+                                                        <th>Age</th>
+                                                        <th>Fees</th>
+                                                        <th class="text-left">Action</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr ng-repeat="list in vm.arr track by $index">
+                                                        <td>{{list.id=$index + 1}}</td>
+                                                        <td>{{list.fname}}</td>
+                                                        <td>{{list.lname}}</td>
+                                                        <td>{{list.classs}}</td>
+                                                        <td>{{list.age}}</td>
+                                                        <td>{{list.fees}}</td>
+                                                        <td class="text-left">
+                                                                <ul>
+                                                                        <li><button class="btn-success" ng-click="vm.edit(list.id)">Update</button></li>   
+                                                                        <li><button class="btn-danger" ng-click="vm.removeRow($index)">Remove</button></li>      
+                                                                </ul>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+            </div>
+        <script src="js/ngStorage.min.js"></script>	
+	</body>
+</html>
+		
+
+		
+ 	
